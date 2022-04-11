@@ -12,7 +12,6 @@ import androidx.lifecycle.viewModelScope
 import dev.iskandev.message_obtain_app.model.Message
 import dev.iskandev.message_obtain_app.repository.MessageRepositoryImpl
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 
 class MessageViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
@@ -45,6 +44,7 @@ class MessageViewModel(private val repository: MessageRepository) : ViewModel() 
                 this is Result.Success<*> -> {
                     messageValue.value = (data as Message).message
                     messageSHA2.value = data.sha256
+                    Log.i(MessageViewModel::class.qualifiedName, "Got message: ${messageValue}\tsha2: {$messageSHA2}")
                 }
                 this is Result.Error && exception is MessageNotFoundException -> notFoundCallback()
                 else -> errorCallback()

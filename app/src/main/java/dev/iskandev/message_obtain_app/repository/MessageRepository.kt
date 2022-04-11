@@ -1,3 +1,5 @@
+@file:Suppress("BlockingMethodInNonBlockingContext")
+
 package dev.iskandev.message_obtain_app.repository
 
 import android.util.Log
