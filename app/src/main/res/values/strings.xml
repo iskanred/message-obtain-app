@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">message-obtain-app</string>
+    <string name="button_post_name">Post</string>
+    <string name="button_get_name">Get</string>
+    <string name="message_name">Message:</string>
+    <string name="sha2_name">sha2:</string>
+</resources>
